@@ -11,7 +11,9 @@ export default class CicloDeVida extends Component {
   }
 
   render() {
-    const {cuenta} = this.state;
+    const {cuenta, mostrarColor} = this.state;
+
+
     // const cmp = this.state.mostrarColor ? <Color cuenta={cuenta} /> : null
     return (
       <div>
@@ -24,7 +26,12 @@ export default class CicloDeVida extends Component {
           type="button"
           onClick={() => this.setState({cuenta: cuenta + 1})}
         >+</button>
-        <button type="button">Toggle Color</button>
+
+        <button
+          type="button"
+          onClick={() => this.setState({mostrarColor: !mostrarColor})}
+        >Toggle Color</button>
+
         {this.state.mostrarColor ? <Color cuenta={cuenta} /> : null}
       </div>
     )

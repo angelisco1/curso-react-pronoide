@@ -3,6 +3,7 @@ import CmpFuncional from './CmpFuncional'
 import PropiedadesYEstado from './PropiedadesYEstado/PropiedadesYEstado';
 import ListaDeComponentes from './ListaDeComponentes/ListaDeComponentes';
 import CicloDeVida from './CicloDeVida/CicloDeVida';
+import Formulario from './Formulario/Formulario';
 
 class App extends React.Component {
   // constructor() {
@@ -16,7 +17,8 @@ class App extends React.Component {
         <CmpFuncional /> */}
         {/* <PropiedadesYEstado /> */}
         {/* <ListaDeComponentes /> */}
-        <CicloDeVida />
+        {/* <CicloDeVida /> */}
+        <Formulario />
       </div>
     )
   }
