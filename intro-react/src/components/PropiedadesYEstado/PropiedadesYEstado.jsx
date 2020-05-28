@@ -121,6 +121,4 @@ class PropiedadesYEstado extends React.Component {
   }
 }
 
-
-
 export default PropiedadesYEstado;
