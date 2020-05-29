@@ -17,7 +17,15 @@ module.exports = {
       {
         test: /\.(css|scss|sass)$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      },
+      // {
+      //   test: /\.(css|less)$/,
+      //   loaders: ['style-loader', 'css-loader', 'less-loader']
+      // },
+      // {
+      //   test: /\.(css)$/,
+      //   loaders: ['style-loader', 'css-loader', 'postcss-loader']
+      // }
     ]
   },
   devServer: {

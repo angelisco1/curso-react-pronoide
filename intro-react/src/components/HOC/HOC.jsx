@@ -27,17 +27,17 @@ export default class HOC extends Component {
       }
     }
 
-
     const CardHovered = withHover(Card);
 
     const FrasesChuckNorris = withData(ListaDatos, 'http://api.icndb.com/jokes/random/3', Spinner)
 
+    // const ListaCocktails = withData(ListaDatos, 'http://api.cocktails.com/random/3', Spinner)
+
     return (
-      <div>
-        {/* <Card /> */}
-        {/* <CardHovered {...datosCard} /> */}
-        <FrasesChuckNorris />
-      </div>
+      <React.Fragment>
+        <Card />
+        <ListaDatos titulo="Lista frases Chuck Norris" datos={[{id: 1, joke: 'Frase 1'}, {id: 2, joke: 'Frase 1'}]} />
+      </React.Fragment>
     )
   }
 }
