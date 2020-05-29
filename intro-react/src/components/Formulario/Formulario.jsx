@@ -55,7 +55,6 @@ export default class Formulario extends Component {
         })
       }
     }
-
   }
 
   // handleChangeInputP(event) {
