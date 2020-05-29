@@ -4,6 +4,7 @@ import PropiedadesYEstado from './PropiedadesYEstado/PropiedadesYEstado';
 import ListaDeComponentes from './ListaDeComponentes/ListaDeComponentes';
 import CicloDeVida from './CicloDeVida/CicloDeVida';
 import Formulario from './Formulario/Formulario';
+import HOC from './HOC/HOC';
 
 class App extends React.Component {
   // constructor() {
@@ -18,7 +19,8 @@ class App extends React.Component {
         {/* <PropiedadesYEstado /> */}
         {/* <ListaDeComponentes /> */}
         {/* <CicloDeVida /> */}
-        <Formulario />
+        {/* <Formulario /> */}
+        <HOC />
       </div>
     )
   }
