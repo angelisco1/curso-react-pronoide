@@ -6,6 +6,8 @@ import CicloDeVida from './CicloDeVida/CicloDeVida';
 import Formulario from './Formulario/Formulario';
 import HOC from './HOC/HOC';
 import UltimasNovedades from './UltimasNovedades/UltimasNovedades';
+import AppMemes from './AppMemes/AppMemes';
+
 
 class App extends React.Component {
   // constructor() {
@@ -22,7 +24,8 @@ class App extends React.Component {
         {/* <CicloDeVida /> */}
         {/* <Formulario /> */}
         {/* <HOC /> */}
-        <UltimasNovedades />
+        {/* <UltimasNovedades /> */}
+        <AppMemes />
       </div>
     )
   }
