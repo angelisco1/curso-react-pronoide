@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import GeneradorMeme from './GeneradorMeme'
 import ListaMemes from './ListaMemes'
+import { connect } from 'react-redux'
+import { crearGetMemesAction } from '../../store/memes/actions'
 
-const AppMemes = () => {
+const AppMemes = ({initMemes}) => {
+
+  useEffect(() => {
+    initMemes()
+  }, [])
+
   return (
     <div>
       <GeneradorMeme />
@@ -11,4 +18,9 @@ const AppMemes = () => {
   )
 }
 
-export default AppMemes
+
+const mapDispatchToProps = {
+  initMemes: crearGetMemesAction
+}
+
+export default connect(null, mapDispatchToProps)(AppMemes)

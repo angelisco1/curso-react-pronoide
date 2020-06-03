@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Meme from './Meme'
+import MemeConOpciones from './MemeConOpciones'
 
 const ListaMemes = ({listaMemes}) => {
-  const listaMemesComponents = listaMemes.map(meme => <Meme key={meme.id} {...meme} />)
+  const listaMemesComponents = listaMemes.map(meme => <MemeConOpciones key={meme.id} {...meme} />)
 
   return (
     <div>

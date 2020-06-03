@@ -7,6 +7,7 @@ import Formulario from './Formulario/Formulario';
 import HOC from './HOC/HOC';
 import UltimasNovedades from './UltimasNovedades/UltimasNovedades';
 import AppMemes from './AppMemes/AppMemes';
+import AppRouting from './AppRouting/AppRouting'
 
 
 class App extends React.Component {
@@ -25,7 +26,8 @@ class App extends React.Component {
         {/* <Formulario /> */}
         {/* <HOC /> */}
         {/* <UltimasNovedades /> */}
-        <AppMemes />
+        {/* <AppMemes /> */}
+        <AppRouting />
       </div>
     )
   }

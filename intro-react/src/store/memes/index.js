@@ -6,22 +6,31 @@ const initialState = {
 }
 
 function addMeme(state, meme) {
-  meme.id = uuidV4()
-  return {listaMemes: [...state.listaMemes, meme]}
+  // meme.id = uuidV4()
+  return {
+    listaMemes: [...state.listaMemes, meme]
+  }
+}
+
+function deleteMeme(state, idMeme) {
+  const nuevaListaMemes = state.listaMemes.filter(meme => meme.id != idMeme);
+  return {
+    listaMemes: nuevaListaMemes
+  }
 }
 
 export default function memes(state = initialState, action) {
-  console.log('RED: ', action)
-  console.log('STATE: ', state)
+  // console.log('RED: ', action)
+  // console.log('STATE: ', state)
   switch(action.type) {
     case ActionTypes.ADD_MEME:
       return addMeme(state, action.payload);
     case ActionTypes.EDIT_MEME:
       return state;
     case ActionTypes.DELETE_MEME:
-      return state;
+      return deleteMeme(state, action.payload);
     case ActionTypes.GET_MEMES:
-      return state;
+      return {listaMemes: action.payload};
     default:
       return state;
   }
