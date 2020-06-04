@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -8,14 +8,22 @@ const Header = () => {
       <hr/>
       <ul>
         <li>
-          <Link to="/">Inicio</Link>
+          <NavLink to="/" exact>Inicio</NavLink>
+          {/* <Link to="/">Inicio</Link> */}
         </li>
         <li>
-          <Link to="/nuevo-usuario">Nuevo usuario</Link>
+          <NavLink to="/usuarios">Usuarios</NavLink>
+        </li>
+        <li>
+          <NavLink to="/nuevo-usuario">Nuevo usuario</NavLink>
+          {/* <Link to="/nuevo-usuario">Nuevo usuario</Link> */}
           {/* <a href="" onClick={(e) => {
             e.preventDefault()
             window.history.pushState(props.to)
           }}></a> */}
+        </li>
+        <li>
+          <NavLink to="/no-existe">Error</NavLink>
         </li>
       </ul>
       <hr/>

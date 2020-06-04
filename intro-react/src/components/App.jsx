@@ -8,6 +8,7 @@ import HOC from './HOC/HOC';
 import UltimasNovedades from './UltimasNovedades/UltimasNovedades';
 import AppMemes from './AppMemes/AppMemes';
 import AppRouting from './AppRouting/AppRouting'
+import ReactHooks from './ReactHooks/ReactHooks'
 
 
 class App extends React.Component {
@@ -27,7 +28,8 @@ class App extends React.Component {
         {/* <HOC /> */}
         {/* <UltimasNovedades /> */}
         {/* <AppMemes /> */}
-        <AppRouting />
+        {/* <AppRouting /> */}
+        <ReactHooks />
       </div>
     )
   }
