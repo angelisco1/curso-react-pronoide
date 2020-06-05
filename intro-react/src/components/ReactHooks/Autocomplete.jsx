@@ -22,9 +22,24 @@ const Autocomplete = () => {
   useEffect(() => {
     axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailElegido}`)
       .then(resp => {
-        setInfoCocktail(resp.data.drinks[0]);
+        if (resp.data.drinks) {
+          setInfoCocktail(resp.data.drinks[0]);
+        }
       })
   }, [cocktailElegido])
+
+
+  const muestraMensajeAlRedimensionar = () => {
+    console.log('Se está redimensionand la pantalla...')
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', muestraMensajeAlRedimensionar)
+    return () => {
+      console.log('Se va a eliminar...')
+      window.removeEventListener('resize', muestraMensajeAlRedimensionar)
+    }
+  }, [])
 
   const listaCocktails = cocktails.map(c => (
       <li

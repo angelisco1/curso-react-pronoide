@@ -10,7 +10,7 @@ export default class App extends Component {
   constructor(props) {
     super()
     this.state = {
-      isAdmin: false
+      isAdmin: true
     }
   }
 

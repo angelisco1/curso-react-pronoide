@@ -7,14 +7,21 @@ export default class Layout extends Component {
     this.state = {
       isMobile: false
     }
+    this.recalculaMobile = this.recalculaMobile.bind(this)
+  }
+
+  recalculaMobile() {
+    this.setState({
+      isMobile: window.innerWidth < 690
+    })
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => {
-      this.setState({
-        isMobile: window.innerWidth < 690
-      })
-    })
+    window.addEventListener('resize', this.recalculaMobile)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.recalculaMobile)
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router';
+import { Redirect, Prompt } from 'react-router-dom';
 
 export default class NuevoUsuario extends Component {
   constructor(props) {
@@ -18,13 +18,10 @@ export default class NuevoUsuario extends Component {
     setTimeout(() => {
       // this.props.history.push('/');
       this.setState({
+        guardando: false,
         datosGuardados: true
       })
     }, 1500)
-  }
-
-  componentWillUnmount() {
-
   }
 
   render() {
@@ -32,9 +29,10 @@ export default class NuevoUsuario extends Component {
     return (
       <div>
         <h3>Nuevo usuario</h3>
-        {this.state.datosGuardados ? <Redirect to="/usuarios" /> : null}
+        {/* {this.state.datosGuardados ? <Redirect to="/usuarios" /> : null} */}
         {this.state.guardando ? <p>Guardando...</p> : null}
         <button type="button" onClick={this.guardar}>Guardar</button>
+        <Prompt message="Seguro que quieres salir? Perderas los cambios..." when={!this.state.datosGuardados} />
       </div>
     )
   }

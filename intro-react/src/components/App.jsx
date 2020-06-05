@@ -27,9 +27,9 @@ class App extends React.Component {
         {/* <Formulario /> */}
         {/* <HOC /> */}
         {/* <UltimasNovedades /> */}
-        {/* <AppMemes /> */}
+        <AppMemes />
         {/* <AppRouting /> */}
-        <ReactHooks />
+        {/* <ReactHooks /> */}
       </div>
     )
   }

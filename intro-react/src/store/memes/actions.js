@@ -2,14 +2,20 @@
 import * as ActionTypes from './action-types';
 import axios from 'axios';
 
-const url = 'https://ejemplos-dc1c1.firebaseio.com/memes-de-angel'
+const url = 'http://localhost:8081/api/memes'
+
+const config = {
+  headers: {
+    'Content-Type': 'application/json'
+  }
+}
 
 export function crearAddMemeAction(meme) {
   return (dispatch)  => {
-
-    axios.post(url + '.json', JSON.stringify(meme))
+    axios.post(url, JSON.stringify(meme), config)
       .then(resp => {
-        dispatch(getAddAction({...meme, id: resp.data.name}))
+        const meme = resp.data
+        dispatch(getAddAction(meme))
       })
 
   }
@@ -31,7 +37,7 @@ export function crearEditMemeAction(meme) {
 
 export function crearDeleteMemeAction(idMeme) {
   return (dispatch) => {
-    axios.delete(`${url}/${idMeme}.json`)
+    axios.delete(`${url}/${idMeme}`)
       .then(() => {
         dispatch(getDeleteAction(idMeme))
       })
@@ -47,16 +53,11 @@ function getDeleteAction(idMeme) {
 
 export function crearGetMemesAction() {
   return (dispatch) => {
-    axios.get(url + '.json')
+    axios.get(url, config)
       .then(resp => {
-        const memes = []
-
-        for (const id in resp.data) {
-          const meme = {...resp.data[id], id}
-          memes.push(meme)
-        }
-
-        dispatch(getMemesAction(memes))
+        const memes = resp.data
+        console.log(memes)
+        dispatch(getMemesAction(memes || []))
       })
   }
 }
